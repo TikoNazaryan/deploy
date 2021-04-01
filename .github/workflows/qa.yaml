@@ -5,7 +5,7 @@ name: QA
 
 on:
   pull_request:
-    branches: [QA]
+    branches: [qa]
 
 jobs:
   build:
