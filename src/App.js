@@ -3,8 +3,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>Live</h1>
-      <h2>Gnac Live Qa - ic</h2>
+      <h1>Qa</h1>
+      <h2>pti gna qa test taskic</h2>
     </div>
   );
 }
