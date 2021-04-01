@@ -26,5 +26,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i
       - run: npm run build
-      - run: env
-      - run: mkdir -p public_html/prod/ && mv build/ public_html/prod/
+      - run: rm -rf public_html/prod/ && mkdir -p public_html/prod/ && mv build/ public_html/prod/
+        if: ${{ github.ref == 'refs/heads/main' }}
+      - run: rm -rf public_html/qa/ && mkdir -p public_html/qa/ && mv build/ public_html/qa/
+        if: ${{ github.ref == 'refs/heads/qa' }}
+ 
