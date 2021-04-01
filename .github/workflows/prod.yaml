@@ -4,8 +4,10 @@
 name: Production
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches:
+      - main
+      - qa
 
 jobs:
   build:
@@ -24,4 +26,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i
       - run: npm run build
-        working-directory: karen
+      - run: env
+      - run: mkdir -p public_html/prod/ && mv build/ public_html/prod/
